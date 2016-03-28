@@ -4,11 +4,88 @@
  Change history
 ================
 
+.. _version-3.0.35:
+
+3.0.35
+======
+:release-date: 2016-03-22 11:22 P.M PST
+:release-by: Ask Solem
+
+- msgpack: msgpack support now requires msgpack-python > 0.4.7.
+
+- Redis: TimeoutError was no longer handled as a recoverable error.
+
+- Redis: Adds the ability to set more Redis connection options
+  using ``Connection(transport_options={...})``.
+
+    - ``socket_connect_timeout``
+    - ``socket_keepalive`` (requires :mod:`redis-py` > 2.10)
+    - ``socket_keepalive_options`` (requires :mod:`redis-py` > 2.10)
+
+- msgpack: Fixes support for binary/unicode data
+
+.. _version-3.0.34:
+
+3.0.34
+======
+:release-date: 2016-03-03 05:30 P.M PST
+:release-by: Ask Solem
+
+- Qpid: Adds async error handling.
+
+    Contributed by Brian Bouterse.
+
+- Qpid: Delivery tag is now a UUID4 (Issue #563).
+
+    Fix contributed by Brian Bouterse.
+
+- Redis: Connection.as_uri() returned malformed URLs when the
+  ``redis+socket`` scheme was ised (Issue celery/celery#2995).
+
+- msgpack: Use binary encoding instead of utf-8 (Issue #570).
+
+.. _version-3.0.33:
+
+3.0.33
+======
+:release-date: 2016-01-08 06:36 P.M PST
+:release-by: Ask Solem
+
+- Now depends on :mod:`amqp` 1.4.9.
+
+- Redis: Fixed problem with auxilliary connections causing the main
+  consumer connection to be closed (Issue #550).
+
+- Qpid: No longer uses threads to operate, to ensure compatibility with
+  all environments (Issue #531).
+
+.. _version-3.0.32:
+
+3.0.32
+======
+:release-date: 2015-12-16 02:29 P.M PST
+:release-by: Ask Solem
+
+- Redis: Fixed bug introduced in 3.0.31 where the redis transport always
+  connects to localhost, regardless of host setting.
+
+.. _version-3.0.31:
+
+3.0.31
+======
+:release-date: 2015-12-16 12:00 P.M PST
+:release-by: Ask Solem
+
+- Redis: Fixed bug introduced in 3.0.30 where socket was prematurely
+  disconnected.
+
+- Hub: Removed debug logging message: "Deregistered fd..." (Issue #549).
+
 .. _version-3.0.30:
 
 3.0.30
 ======
-:release-date: 2015-12-07 12:28 A.M PDT
+:release-date: 2015-12-07 12:28 A.M PST
 :release-by: Ask Solem
 
 - Fixes compatiblity with uuid in Python 2.7.11 and 3.5.1.
@@ -178,7 +255,8 @@
 
     Contributed by Joshua Harlow.
 
-- Redis: Now properly handles ``TimeoutError raised by py-redis.
+- Redis: Now properly handles :exc:`redis.exceptions.TimeoutError`
+  raised by :mod:`redis`.
 
     Contributed by markow.
 
