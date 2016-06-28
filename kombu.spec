@@ -4,7 +4,7 @@
 #
 Name     : kombu
 Version  : 3.0.35
-Release  : 22
+Release  : 23
 URL      : https://pypi.python.org/packages/source/k/kombu/kombu-3.0.35.tar.gz
 Source0  : https://pypi.python.org/packages/source/k/kombu/kombu-3.0.35.tar.gz
 Summary  : Messaging library for Python
