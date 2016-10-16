@@ -4,6 +4,38 @@
  Change history
 ================
 
+.. _version-3.0.37:
+
+3.0.37
+======
+:release-date: 2016-10-06 05:00 P.M PDT
+:release-by: Ask Solem
+
+- Connection: Return value of ``.info()`` was no longer JSON serializable,
+  leading to "itertools.cycle object not JSON serializable"
+  errors (Issue #635).
+
+.. _version-3.0.36:
+
+3.0.36
+======
+:release-date: 2016-09-30 03:06 P.M PDT
+:release-by: Ask Solem
+
+- Connection: Fixed bug when cloning connection with alternate urls.
+
+    Fix contributed by Emmanuel Cazenave.
+
+- Redis: Fixed problem with unix socket connections.
+
+    https://github.com/celery/celery/issues/2903
+
+    Fix contributed by Raphael Michel.
+
+- Redis: Fixed compatibility with older redis-py versions (Issue #576).
+
+- Broadcast now retains queue name when being copied/pickled (Issue #578).
+
 .. _version-3.0.35:
 
 3.0.35
@@ -18,9 +50,9 @@
 - Redis: Adds the ability to set more Redis connection options
   using ``Connection(transport_options={...})``.
 
-    - ``socket_connect_timeout``
-    - ``socket_keepalive`` (requires :mod:`redis-py` > 2.10)
-    - ``socket_keepalive_options`` (requires :mod:`redis-py` > 2.10)
+    - ``socket_connect_timeout`` (requires :mod:`redis-py` 2.10 or later)
+    - ``socket_keepalive`` (requires :mod:`redis-py` 2.10 or later)
+    - ``socket_keepalive_options`` (requires :mod:`redis-py` 2.10 or later)
 
 - msgpack: Fixes support for binary/unicode data
 
@@ -1810,7 +1842,7 @@ SQS: Now supports long polling (Issue #176).
           as a pure-python replacement in environments where rabbitmq-c cannot
           be compiled.
 
-    .. _`py-amqp`: http://amqp.readthedocs.org/
+    .. _`py-amqp`: https://amqp.readthedocs.io/
 
     If you start using use py-amqp instead of amqplib you can enjoy many
     advantages including:
