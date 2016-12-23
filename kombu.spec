@@ -4,7 +4,7 @@
 #
 Name     : kombu
 Version  : 3.0.37
-Release  : 26
+Release  : 27
 URL      : http://pypi.debian.net/kombu/kombu-3.0.37.tar.gz
 Source0  : http://pypi.debian.net/kombu/kombu-3.0.37.tar.gz
 Summary  : Messaging library for Python
