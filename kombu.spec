@@ -6,7 +6,7 @@
 #
 Name     : kombu
 Version  : 3.0.37
-Release  : 29
+Release  : 30
 URL      : http://pypi.debian.net/kombu/kombu-3.0.37.tar.gz
 Source0  : http://pypi.debian.net/kombu/kombu-3.0.37.tar.gz
 Source99 : http://pypi.debian.net/kombu/kombu-3.0.37.tar.gz.asc
