@@ -6,13 +6,15 @@
 #
 Name     : kombu
 Version  : 3.0.37
-Release  : 30
+Release  : 31
 URL      : http://pypi.debian.net/kombu/kombu-3.0.37.tar.gz
 Source0  : http://pypi.debian.net/kombu/kombu-3.0.37.tar.gz
 Source99 : http://pypi.debian.net/kombu/kombu-3.0.37.tar.gz.asc
 Summary  : Messaging library for Python
 Group    : Development/Tools
 License  : BSD-3-Clause
+Requires: kombu-python3
+Requires: kombu-license
 Requires: kombu-python
 Requires: PyYAML
 Requires: amqp
@@ -27,13 +29,12 @@ Requires: pyzmq
 Requires: qpid-python
 Requires: redis
 BuildRequires : amqp
-BuildRequires : amqp-python
 BuildRequires : anyjson
+BuildRequires : buildreq-distutils3
 BuildRequires : linecache2
 BuildRequires : nose
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : python-dev
 BuildRequires : python-mock
 BuildRequires : python3-dev
 BuildRequires : setuptools
@@ -46,12 +47,30 @@ BuildRequires : unittest2
          kombu - Messaging library for Python
         ========================================
 
+%package license
+Summary: license components for the kombu package.
+Group: Default
+
+%description license
+license components for the kombu package.
+
+
 %package python
 Summary: python components for the kombu package.
 Group: Default
+Requires: kombu-python3
 
 %description python
 python components for the kombu package.
+
+
+%package python3
+Summary: python3 components for the kombu package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the kombu package.
 
 
 %prep
@@ -62,20 +81,19 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1503095007
-python2 setup.py build -b py2
+export SOURCE_DATE_EPOCH=1532210976
 python3 setup.py build -b py3
 
 %check
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test || :
+PYTHONPATH=%{buildroot}/usr/lib/python3.7/site-packages python3 setup.py test || :
 %install
-export SOURCE_DATE_EPOCH=1503095007
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+mkdir -p %{buildroot}/usr/share/doc/kombu
+cp LICENSE %{buildroot}/usr/share/doc/kombu/LICENSE
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
@@ -83,7 +101,13 @@ echo ----[ mark ]----
 %files
 %defattr(-,root,root,-)
 
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/kombu/LICENSE
+
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python2*/*
+
+%files python3
+%defattr(-,root,root,-)
 /usr/lib/python3*/*
