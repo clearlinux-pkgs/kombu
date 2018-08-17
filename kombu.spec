@@ -6,7 +6,7 @@
 #
 Name     : kombu
 Version  : 4.2.1
-Release  : 34
+Release  : 35
 URL      : http://pypi.debian.net/kombu/kombu-4.2.1.tar.gz
 Source0  : http://pypi.debian.net/kombu/kombu-4.2.1.tar.gz
 Source99 : http://pypi.debian.net/kombu/kombu-4.2.1.tar.gz.asc
@@ -20,7 +20,6 @@ Requires: PyYAML
 Requires: amqp
 Requires: boto3
 Requires: kazoo
-Requires: librabbitmq
 Requires: pycurl
 Requires: pymongo
 Requires: redis
@@ -74,7 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1533932105
+export SOURCE_DATE_EPOCH=1534514045
 python3 setup.py build -b py3
 
 %install
