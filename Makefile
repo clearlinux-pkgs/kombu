@@ -1,5 +1,5 @@
 PKG_NAME := kombu
-URL = https://files.pythonhosted.org/packages/52/29/2c4e26fb944327f7043361243c46a141b62d34d55bdb5bbef5438c7dcff0/kombu-4.2.2.tar.gz
+URL = https://files.pythonhosted.org/packages/ca/03/560c2e0089d41459898d9ac573d897e01dc9f24e8e3fa2c7a03cd0dd39bc/kombu-4.2.2.post1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
