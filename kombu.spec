@@ -4,7 +4,7 @@
 #
 Name     : kombu
 Version  : 4.6.5
-Release  : 46
+Release  : 47
 URL      : https://files.pythonhosted.org/packages/1e/5b/8a7de491ba607c8a64bd8971ddadfd6229780d8476345245f91c10bb8fdb/kombu-4.6.5.tar.gz
 Source0  : https://files.pythonhosted.org/packages/1e/5b/8a7de491ba607c8a64bd8971ddadfd6229780d8476345245f91c10bb8fdb/kombu-4.6.5.tar.gz
 Summary  : Messaging library for Python.
@@ -41,6 +41,7 @@ BuildRequires : redis
 BuildRequires : six
 BuildRequires : traceback2
 BuildRequires : unittest2
+Patch1: req.patch
 
 %description
 ========================================
@@ -75,13 +76,14 @@ python3 components for the kombu package.
 
 %prep
 %setup -q -n kombu-4.6.5
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570908460
+export SOURCE_DATE_EPOCH=1570916408
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "

@@ -1,0 +1,20 @@
+--- kombu-4.6.5/kombu.egg-info/requires.txt~	2019-09-30 13:27:31.000000000 +0000
++++ kombu-4.6.5/kombu.egg-info/requires.txt	2019-10-12 21:37:58.209210076 +0000
+@@ -1,4 +1,4 @@
+-amqp==2.5.1
++amqp==
+ importlib-metadata>=0.18
+ 
+ [azureservicebus]
+--- kombu-4.6.5/requirements/default.txt~	2019-09-30 13:09:54.000000000 +0000
++++ kombu-4.6.5/requirements/default.txt	2019-10-12 21:38:14.065209855 +0000
+@@ -1,2 +1,2 @@
+-amqp==2.5.1
++amqp
+ importlib-metadata>=0.18
+--- kombu-4.6.5/extra/requirements/default.txt~	2019-09-30 13:09:54.000000000 +0000
++++ kombu-4.6.5/extra/requirements/default.txt	2019-10-12 21:38:26.265209686 +0000
+@@ -1,2 +1,2 @@
+-amqp==2.5.1
++amqp
+ importlib-metadata>=0.18
