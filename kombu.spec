@@ -4,7 +4,7 @@
 #
 Name     : kombu
 Version  : 4.6.8
-Release  : 52
+Release  : 53
 URL      : https://files.pythonhosted.org/packages/88/2d/abda45e54473821baa33bb7b06defb316e12aca9cb5cc874d8daa75f07f1/kombu-4.6.8.tar.gz
 Source0  : https://files.pythonhosted.org/packages/88/2d/abda45e54473821baa33bb7b06defb316e12aca9cb5cc874d8daa75f07f1/kombu-4.6.8.tar.gz
 Summary  : Messaging library for Python.
@@ -83,7 +83,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583161147
+export SOURCE_DATE_EPOCH=1583165415
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
