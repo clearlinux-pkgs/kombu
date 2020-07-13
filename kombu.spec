@@ -4,7 +4,7 @@
 #
 Name     : kombu
 Version  : 4.6.11
-Release  : 56
+Release  : 57
 URL      : https://files.pythonhosted.org/packages/45/e1/00f2e3f6f5575aa2f7ee41e2fd884ce573f8146e136bde37daf45ef7ca5e/kombu-4.6.11.tar.gz
 Source0  : https://files.pythonhosted.org/packages/45/e1/00f2e3f6f5575aa2f7ee41e2fd884ce573f8146e136bde37daf45ef7ca5e/kombu-4.6.11.tar.gz
 Summary  : Messaging library for Python.
